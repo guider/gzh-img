@@ -4,6 +4,13 @@
 > 全文只有蓝、橙两种彩色，不引入第三色。
 > 适用：增长方法论、案例复盘、商业观点、数据驱动的深度分析。
 
+**本主题的两条硬规则**（与其它主题不同，装配时别照搬通用流程）：
+
+1. **不做「本文看点」导读卡**。头图 → 署名标签 → 引言卡 → 直接进正文。
+   不要在正文前插三列目录卡，也不要用任何其它形式的看点罗列。
+2. **章节标题不配英文标签**。只有中文标题（可带编号），
+   不要 THE PRICE / FIVE VALUES 这类英文小字。
+
 ## 设计变量速查表
 
 | 变量 | 色值 | 用途 |
@@ -47,8 +54,8 @@
 ```
 
 > **对比度提醒**：白字压在 `#FF6B35` 上约 2.6:1，低于 WCAG AA 的 4.5:1。
-> 13px 加粗尺寸下尚可辨认，但若觉得发飘，把底色换成 `#E8551F`（约 3.5:1）
-> 或把字色换成 `#FFFFFF` 加 `font-weight:800`。色值改动同步改这里。
+> 13px 加粗尺寸下尚可辨认，但若觉得发飘，把底色换成 `#E8551F`（约 3.5:1）。
+> 色值改动同步改这里。
 
 ## 组件 3 开头引言卡（题记）
 
@@ -69,33 +76,9 @@
 
 题记完整照录，不省字。高亮恰好 2 处，用橙色文字而非橙色底——底色块在深色模式下容易发脏。
 
-## 组件 4 前言导读（三列看点卡）
+**引言卡之后直接进正文，不插导读卡。**
 
-精选 3 个看点，不是全部章节。
-
-```html
-<section style="padding:0 10px 32px;">
-  <p style="font-size:14px;color:#8C8C8C;margin:0 0 14px;letter-spacing:1px;">
-    <span leaf="">本文看点</span>
-  </p>
-  <section style="display:flex;justify-content:space-between;">
-    <section style="flex:1;background:#F7F8FA;border-radius:8px;padding:16px 12px;margin-right:8px;text-align:center;border:1px solid #E6E8EB;">
-      <p style="display:inline-block;background:#1B4F8A;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:3px;margin:0 0 8px;"><span leaf="">01</span></p>
-      <p style="font-size:13px;font-weight:700;color:#123A66;margin:0;"><span leaf="">{看点一}</span></p>
-    </section>
-    <section style="flex:1;background:#F7F8FA;border-radius:8px;padding:16px 12px;margin-right:8px;text-align:center;border:1px solid #E6E8EB;">
-      <p style="display:inline-block;background:#1B4F8A;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:3px;margin:0 0 8px;"><span leaf="">02</span></p>
-      <p style="font-size:13px;font-weight:700;color:#123A66;margin:0;"><span leaf="">{看点二}</span></p>
-    </section>
-    <section style="flex:1;background:#F7F8FA;border-radius:8px;padding:16px 12px;text-align:center;border:1px solid #E6E8EB;">
-      <p style="display:inline-block;background:#1B4F8A;color:#FFFFFF;font-size:12px;font-weight:800;padding:2px 10px;border-radius:3px;margin:0 0 8px;"><span leaf="">03</span></p>
-      <p style="font-size:13px;font-weight:700;color:#123A66;margin:0;"><span leaf="">{看点三}</span></p>
-    </section>
-  </section>
-</section>
-```
-
-## 组件 5 章节分割线（蓝色渐变）
+## 组件 4 章节分割线（蓝色渐变）
 
 ```html
 <section style="padding:0 10px;">
@@ -105,16 +88,13 @@
 </section>
 ```
 
-## 组件 6 一级标题（章节标题，18px + 橙色竖条）
+## 组件 5 一级标题（章节标题，18px + 橙色竖条，无英文标签）
 
-`##` 映射到这里。18px，文字 `#123A66`，左侧 3px 橙色竖条。
+`##` 映射到这里。18px，文字 `#123A66`，左侧 3px 橙色竖条。**不加英文小标签。**
 
 ```html
 <section style="margin-top:48px;margin-bottom:24px;padding:0 10px;">
   <section style="border-left:3px solid #FF6B35;padding-left:12px;">
-    <p style="font-size:10px;color:#8C8C8C;font-weight:700;letter-spacing:3px;margin:0 0 4px;text-transform:uppercase;">
-      <span leaf="">{ENGLISH LABEL}</span>
-    </p>
     <h3 style="font-size:18px;font-weight:800;color:#123A66;margin:0;letter-spacing:0.5px;line-height:1.5;">
       <span leaf="">{章节标题}</span>
     </h3>
@@ -122,14 +102,11 @@
 </section>
 ```
 
-**带编号的变体**（章节较多、需要序号感时用）：
+**带编号的变体**（章节 4 个以上、需要序号感时用）：
 
 ```html
 <section style="margin-top:48px;margin-bottom:24px;padding:0 10px;">
   <section style="border-left:3px solid #FF6B35;padding-left:12px;">
-    <p style="font-size:10px;color:#8C8C8C;font-weight:700;letter-spacing:3px;margin:0 0 4px;text-transform:uppercase;">
-      <span leaf="">{ENGLISH LABEL}</span>
-    </p>
     <h3 style="font-size:18px;font-weight:800;color:#123A66;margin:0;letter-spacing:0.5px;line-height:1.5;">
       <span style="color:#FF6B35;"><span leaf="">01 </span></span>
       <span leaf="">{章节标题}</span>
@@ -139,8 +116,9 @@
 ```
 
 同一篇文章里只用一种变体，不混用。
+没有英文标签之后，标题区只剩单行，上方 `margin-top:48px` 的留白就是层级感的来源，别压缩。
 
-## 组件 6b 二级标题（小节标题，16px 蓝色加粗）
+## 组件 5b 二级标题（小节标题，16px 蓝色加粗）
 
 `###` 映射到这里。
 
@@ -152,7 +130,7 @@
 </section>
 ```
 
-## 组件 7 正文段落
+## 组件 6 正文段落
 
 ```html
 <section style="padding:0 10px;">
@@ -164,9 +142,9 @@
 
 连续多段时，外层 `<section style="padding:0 10px;">` 包住整组，不必每段一个。
 
-## 组件 8 正文高亮样式
+## 组件 7 正文高亮样式
 
-### 8a. 橙色关键词下划线（最常用，每段 1–3 处）
+### 7a. 橙色关键词下划线（最常用，每段 1–3 处）
 
 ```html
 <span style="border-bottom:2px solid #FF6B35;font-weight:600;"><span leaf="">{关键短语}</span></span>
@@ -174,7 +152,7 @@
 
 正文关键词标记一律用这一条，权威来源是 `theme-index.md` 的「正文下划线 CSS」列。
 
-### 8b. 橙色重点加粗（锚点层，全文 ≤ 5 处）
+### 7b. 橙色重点加粗（锚点层，全文 ≤ 5 处）
 
 ```html
 <strong style="color:#FF6B35;"><span leaf="">{重点句}</span></strong>
@@ -182,30 +160,30 @@
 
 不加底色、不用荧光笔效果。橙字本身已经够跳，加底色会在深色模式下糊成一块。
 
-### 8c. 数据标注（橙色加粗，用于数字与指标）
+### 7c. 数据标注（橙色加粗，用于数字与指标）
 
 ```html
 <span style="color:#FF6B35;font-weight:800;"><span leaf="">复购率提升 37%</span></span>
 ```
 
 数字和单位一起包进去，别只标数字不标单位。
-数据标注不计入 8b 的 5 处配额，但同一段里别超过 3 个，否则页面像仪表盘。
+数据标注不计入 7b 的 5 处配额，但同一段里别超过 3 个，否则页面像仪表盘。
 
-### 8d. 蓝色概念标签（核心术语，每篇 2~4 个）
+### 7d. 蓝色概念标签（核心术语，每篇 2~4 个）
 
 ```html
 <span style="background:#F7F8FA;color:#1B4F8A;padding:2px 6px;border-radius:3px;font-weight:700;border:1px solid #E6E8EB;"><span leaf="">{核心概念}</span></span>
 ```
 
-### 8e. 行内代码
+### 7e. 行内代码
 
 ```html
 <span style="background:#F7F8FA;color:#3F3F3F;padding:1px 5px;border-radius:3px;font-family:Menlo,Consolas,monospace;font-size:14px;border:1px solid #E6E8EB;"><span leaf="">{code}</span></span>
 ```
 
-## 组件 9 引用块
+## 组件 8 引用块
 
-### 9a. 标准引用（浅底 + 蓝色左条）
+### 8a. 标准引用（浅底 + 蓝色左条）
 
 ```html
 <section style="background:#F7F8FA;border-left:3px solid #1B4F8A;border-radius:0 8px 8px 0;padding:16px 20px;margin:0 10px 24px;">
@@ -215,7 +193,7 @@
 </section>
 ```
 
-### 9b. 金句引用（橙色左条，视觉焦点最强）
+### 8b. 金句引用（橙色左条，视觉焦点最强）
 
 ```html
 <section style="background:#F7F8FA;border-left:3px solid #FF6B35;border-radius:0 8px 8px 0;padding:18px 22px;margin:0 10px 24px;">
@@ -225,9 +203,9 @@
 </section>
 ```
 
-一篇文章里 9b 不超过 2 处，多了就不是金句了。
+一篇文章里 8b 不超过 2 处，多了就不是金句了。
 
-### 9c. 居中金句分隔（章节间过渡）
+### 8c. 居中金句分隔（章节间过渡）
 
 ```html
 <section style="padding:0 10px;">
@@ -237,9 +215,9 @@
 </section>
 ```
 
-## 组件 10 提示条
+## 组件 9 提示条
 
-### 10a. 蓝色提示条（重要结论）
+### 9a. 蓝色提示条（重要结论）
 
 ```html
 <section style="background:#F7F8FA;border:1px solid #E6E8EB;border-top:2px solid #1B4F8A;border-radius:0 0 8px 8px;padding:16px 20px;margin:0 10px 24px;">
@@ -252,7 +230,7 @@
 </section>
 ```
 
-### 10b. 橙色警示条（风险、踩坑）
+### 9b. 橙色警示条（风险、踩坑）
 
 ```html
 <section style="background:#F7F8FA;border:1px solid #E6E8EB;border-top:2px solid #FF6B35;border-radius:0 0 8px 8px;padding:16px 20px;margin:0 10px 24px;">
@@ -265,9 +243,9 @@
 </section>
 ```
 
-## 组件 11 列表
+## 组件 10 列表
 
-### 11a. 有序列表（蓝色方标编号）
+### 10a. 有序列表（蓝色方标编号）
 
 ```html
 <section style="padding:0 10px;margin-bottom:24px;">
@@ -282,7 +260,9 @@
 </section>
 ```
 
-### 11b. 无序要点（橙点前缀）
+选项式列表（A / B / C）把编号文字换掉即可，样式不变。
+
+### 10b. 无序要点（橙点前缀）
 
 ```html
 <section style="padding:0 10px;margin-bottom:24px;">
@@ -293,7 +273,7 @@
 </section>
 ```
 
-### 11c. 时间线（增长阶段、案例演进）
+### 10c. 时间线（增长阶段、案例演进）
 
 ```html
 <section style="padding:0 10px;margin-bottom:24px;">
@@ -306,9 +286,9 @@
 </section>
 ```
 
-## 组件 12 数据卡片与表格
+## 组件 11 数据卡片与表格
 
-### 12a. 数据卡片（两列）
+### 11a. 数据卡片（两列）
 
 ```html
 <section style="padding:0 10px 24px;">
@@ -325,7 +305,9 @@
 </section>
 ```
 
-### 12b. 表格（真实数据表）
+数据卡片只在原文没有把数字写进句子时用；原文已经写了的，用 7c 行内标注，别重复一遍。
+
+### 11b. 表格（真实数据表）
 
 ```html
 <section style="padding:0 10px 24px;overflow-x:auto;">
@@ -350,7 +332,7 @@
 
 列宽按内容长度分配，480 宽下不横向溢出，内容一字不删。
 
-## 组件 13 标签胶囊
+## 组件 12 标签胶囊
 
 ```html
 <section style="padding:0 10px 20px;">
@@ -359,7 +341,7 @@
 </section>
 ```
 
-## 组件 14 图片容器
+## 组件 13 图片容器
 
 ```html
 <section style="padding:6px;border:1px solid #E6E8EB;border-radius:10px;margin:10px 10px 24px;">
@@ -371,7 +353,7 @@
 
 配图注时，图注用 `#8C8C8C`、13px、居中。
 
-## 组件 15 END 结尾分割线
+## 组件 14 END 结尾分割线
 
 ```html
 <section style="padding:0 10px;">
@@ -385,7 +367,7 @@
 </section>
 ```
 
-## 组件 16 尾部签名区
+## 组件 15 尾部签名区
 
 ```html
 <section style="padding:0 10px;">
@@ -405,46 +387,46 @@
 
 ```
 组件 1  全局容器（包住全部）
-├─ 组件 14 头图（封面，全文只出现一次）
+├─ 组件 13 头图（封面，全文只出现一次）
 ├─ 组件 2  文首署名标签「李云龙主笔」
 ├─ 组件 3  开头引言卡（完整题记 + 2 处橙色关键词）
-├─ 组件 4  前言导读（3 个看点）
-├─ 前言正文（组件 7）
-├─ 组件 6  一级标题 01
-│   ├─ 组件 7  正文段落（每段 1–3 处组件 8a 下划线）
-│   ├─ 组件 6b 二级标题（有 ### 时）
-│   └─ 组件 9 / 10 / 11 / 12（按文章类型配方选）
-├─ 组件 5  章节分割线
-├─ 组件 6  一级标题 02
+├─ 前言正文（组件 6）          ← 引言卡之后直接进正文，没有导读卡
+├─ 组件 5  一级标题（纯中文，无英文标签）
+│   ├─ 组件 6  正文段落（每段 1–3 处组件 7a 下划线）
+│   ├─ 组件 5b 二级标题（有 ### 时）
+│   └─ 组件 8 / 9 / 10 / 11（按文章类型配方选）
+├─ 组件 4  章节分割线
+├─ 组件 5  一级标题
 │   └─ ……
-├─ 组件 5  章节分割线
-├─ 组件 6  一级标题 03 / 04 ……
-├─ 组件 15 END 分割线
-└─ 组件 16 尾部签名区
+├─ 组件 14 END 分割线
+└─ 组件 15 尾部签名区
 ```
 
-**目录相对封面的位置**：导读（组件 4）在署名标签和引言卡之后、正文之前，
-永远在头图下方，不前置。
+**本主题没有目录/导航环节**。其它主题的「本文看点」三列卡在这里不适用，
+通用流程里要求「目录精选 3 个看点」的检查项，用本主题时直接跳过。
 
 ## 视觉层级（3 层递进）
 
 | 层 | 手段 | 配额 |
 |---|---|---|
-| 锚点层 | 组件 8b 橙色加粗 | 全文 ≤ 5 处 |
-| 标记层 | 组件 8a 橙色下划线 | 每段 1–3 处，一段都不能漏 |
-| 结构层 | 组件 6 / 6b 标题、组件 5 分割线、组件 9 引用块 | 按结构需要 |
+| 锚点层 | 组件 7b 橙色加粗 | 全文 ≤ 5 处 |
+| 标记层 | 组件 7a 橙色下划线 | 每段 1–3 处，一段都不能漏 |
+| 结构层 | 组件 5 / 5b 标题、组件 4 分割线、组件 8 引用块 | 按结构需要 |
 
-数据标注（8c）独立于锚点层配额，但每段 ≤ 3 个。
+数据标注（7c）独立于锚点层配额，但每段 ≤ 3 个。
+
+去掉英文标签之后，章节之间的区分只剩「分割线 + 大留白 + 橙竖条」三样，
+所以分割线和 `margin-top:48px` 不能省，省了章节就糊在一起。
 
 ## 文章类型 → 组件组合配方
 
 | 文章类型 | 核心组件 | 点缀组件（≤3 种） | 一级标题变体 |
 |---------|---------|-----------------|-------------|
-| 增长方法论 / 体系拆解 | 7 + 6b + 11a | 10a 蓝色结论条、9a 引用、12a 数据卡 | 带编号 |
-| 案例复盘 | 7 + 11c 时间线 + 12a | 9b 金句、10b 警示条 | 带编号 |
-| 商业观点 / 评论 | 7 + 9b + 9c | 9a 引用、8d 概念标签 | 不带编号 |
-| 数据驱动分析 | 7 + 12a + 12b 表格 | 10a 结论条、8c 数据标注 | 带编号 |
-| 工具 / 清单盘点 | 7 + 11a + 13 标签 | 12a 数据卡、10b 警示条 | 带编号 |
+| 增长方法论 / 体系拆解 | 6 + 5b + 10a | 9a 蓝色结论条、8a 引用、11a 数据卡 | 带编号 |
+| 案例复盘 | 6 + 10c 时间线 + 11a | 8b 金句、9b 警示条 | 带编号 |
+| 商业观点 / 评论 | 6 + 8b + 8c | 8a 引用、7d 概念标签 | 4 章以上带编号，否则不带 |
+| 数据驱动分析 | 6 + 11a + 11b 表格 | 9a 结论条、7c 数据标注 | 带编号 |
+| 工具 / 清单盘点 | 6 + 10a + 12 标签 | 11a 数据卡、9b 警示条 | 带编号 |
 
 ## Markdown → 增长蓝橙 映射规则
 
@@ -452,19 +434,20 @@
 |---------|------|------|
 | `#` 一级标题 | 不进正文 | 走公众号标题栏 |
 | `> 题记` | 组件 3 引言卡 | 完整照录，2 处橙色关键词高亮 |
-| `##` | 组件 6 一级标题 | 18px `#123A66` + 3px 橙竖条，配英文标签 |
-| `###` | 组件 6b 二级标题 | 16px `#1B4F8A` 加粗 |
-| 普通段落 | 组件 7 | 每段 1–3 处 8a 下划线 |
-| `**加粗**` | 组件 8b | 橙色加粗，全文 ≤ 5 处 |
-| 含数字的指标 | 组件 8c | 数字带单位一起标橙 |
-| `> 引用` | 组件 9a | 浅底 + 蓝色左条 |
-| 金句 / 核心论点 | 组件 9b | 橙色左条，≤ 2 处 |
-| `1. 2. 3.` 有序列表 | 组件 11a | 蓝色方标编号 |
-| `- ` 无序列表 | 组件 11b | 橙点前缀 |
-| 表格 | 组件 12b | 蓝色表头，隔行 `#F7F8FA` |
-| `` `代码` `` | 组件 8e | 行内代码 |
-| `![]()` | 组件 14 | 图片容器 |
-| 文末署名 | 组件 16 | 统一成「—— 李云龙增长研习社」 |
+| `##` | 组件 5 一级标题 | 18px `#123A66` + 3px 橙竖条，**不配英文标签** |
+| `###` | 组件 5b 二级标题 | 16px `#1B4F8A` 加粗 |
+| 普通段落 | 组件 6 | 每段 1–3 处 7a 下划线 |
+| `**加粗**` | 组件 7b | 橙色加粗，全文 ≤ 5 处 |
+| 含数字的指标 | 组件 7c | 数字带单位一起标橙 |
+| `> 引用` | 组件 8a | 浅底 + 蓝色左条 |
+| 金句 / 核心论点 | 组件 8b | 橙色左条，≤ 2 处 |
+| `1. 2. 3.` 有序列表 | 组件 10a | 蓝色方标编号 |
+| `- ` 无序列表 | 组件 10b | 橙点前缀 |
+| 表格 | 组件 11b | 蓝色表头，隔行 `#F7F8FA` |
+| `` `代码` `` | 组件 7e | 行内代码 |
+| `![]()` | 组件 13 | 图片容器 |
+| 文末署名 | 组件 15 | 统一成「—— 李云龙增长研习社」 |
+| —— | —— | **不生成导读卡、不生成英文标签** |
 
 ---
 
@@ -478,18 +461,20 @@
 
 - **正文用 `#3F3F3F`**：足够深，会被微信识别为「深色文字」并提亮，不会留在中间调发灰。
   这也是规范里写「不要用纯黑」之外还必须够深的原因——`#666` 以上就危险了。
-- **不用彩色底块装文字**：8b 重点加粗是纯橙字、不加底色；引言卡高亮也是橙字不是橙底。
+- **不用彩色底块装文字**：7b 重点加粗是纯橙字、不加底色；引言卡高亮也是橙字不是橙底。
   浅底色块在深色模式下会被压暗，而块内文字颜色被保留，就是「发脏」最常见的成因。
 - **`#F7F8FA` 只用于弱区分**：引用块、卡片的可读性由左边框和文字本身承担，
   不依赖底色对比。底色被压暗后，块内 `#3F3F3F` 会跟着被提亮，仍然可读。
 - **橙色 `#FF6B35` 是两种模式下都安全的色**：在白底和深底上对比度都够，
   所以重点、下划线、数据标注全部押在橙上，而不是押在蓝上。
+- **去掉英文标签是个意外收益**：原来那行小字用的是 `#8C8C8C`，
+  正好是深色模式下最容易发脏的色，现在不存在了。
 
 **仍有风险的地方**
 
 - **`#8C8C8C` 次要文字**：正处在中间调，深色模式下可能既不提亮也不压暗，
-  成为最容易「发脏」的一处。所以本主题只把它用在图注、来源、指标名这类
-  **丢了也不影响理解**的位置，正文信息一律不用它。
+  是最容易「发脏」的一处。去掉英文标签后，它只剩下图注、来源、指标名、
+  尾部签名这几处，都属于**丢了也不影响理解**的位置，正文信息一律不用它。
 - **`#123A66` 标题深蓝**：深色模式下会被提亮成浅蓝，观感和浅色模式不同，
   但不影响可读性。介意的话把一级标题改成 `#1B4F8A`，提亮后更接近品牌蓝。
 - **表格蓝色表头 + 白字**：表头底色 `#1B4F8A` 会被保留，白字仍可读，风险低。
